@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Tuition,Review
-from .serializers import TuitionSerializer,ReviewSerializer
+from .models import Tuition,Review,SubjectChoice
+from .serializers import TuitionSerializer,ReviewSerializer,SubjectChoiceSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 
 
@@ -17,3 +17,7 @@ class ReviewViewset(viewsets.ModelViewSet):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
     
+
+class GetAllSubjectsViewSet(viewsets.ModelViewSet):
+    queryset = SubjectChoice.objects.all()
+    serializer_class = SubjectChoiceSerializer

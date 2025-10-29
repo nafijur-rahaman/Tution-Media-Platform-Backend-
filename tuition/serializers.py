@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Tuition,Review
+from .models import Tuition,Review, SubjectChoice
 from rest_framework import serializers
 from tutor.constants import *
 
@@ -28,4 +28,9 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = ['id', 'name', 'review', 'created_at']
-   
+
+
+class SubjectChoiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SubjectChoice
+        fields = ['id', 'name']
