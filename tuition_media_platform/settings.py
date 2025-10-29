@@ -127,41 +127,31 @@ WSGI_APPLICATION = 'tuition_media_platform.wsgi.app'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': env("DB_NAME"),
-#         'USER': env("DB_USER"),
-#         'PASSWORD': env("DB_PASS"),
-#         'HOST': env("DB_HOST"),
-#         'PORT': env("DB_PORT"),
-#     }
-# }
+
 
 # print(env("Db_USER"))
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'postgres.soltvdfgpqtbsqqavsyt',
-#         'PASSWORD': 'SKf6Ky7k*Brf8Mh',
-#         'HOST': 'aws-0-ap-southeast-1.pooler.supabase.com',
-#         'PORT': '6543'
-#     }
-# }
-
-# Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
-    'default': dj_database_url.config(
-    
-        default='postgresql://tution_db_user:4MnUNfCHj9RTJPnlLmGltHbe7hTHgCCd@dpg-d250etk9c44c73b31afg-a.oregon-postgres.render.com/tution_db',
-        conn_max_age=600
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env("DB_NAME"),
+        'USER': env("DB_USER"),
+        'PASSWORD': env("DB_PASS"),
+        'HOST': env("DB_HOST"),
+        'PORT': env("DB_PORT"),
+    }
 }
 
-# SKf6Ky7k*Brf8Mh
-# Password validation
+# Replace the SQLite DATABASES configuration with PostgreSQL:
+# DATABASES = {
+#     'default': dj_database_url.config(
+    
+#         default='postgresql://tution_db_user:4MnUNfCHj9RTJPnlLmGltHbe7hTHgCCd@dpg-d250etk9c44c73b31afg-a.oregon-postgres.render.com/tution_db',
+#         conn_max_age=600
+#     )
+# }
+
+
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
